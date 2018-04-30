@@ -1,21 +1,25 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+import { HashRouter as Router, Route } from "react-router-dom";
 
+import LoginScreen from './Screens/LoginScreen';
+import AllEventsScreen from './Screens/AllEventsScreen';
+import OneEventScreen from './Screens/OneEventScreen';
+import ToDoListScreen from './Screens/ToDoListScreen';
+import CreateNewScreen from './Screens/CreateNewScreen';
+
+const App = () => {
+  return (
+    <Router>
+      <div>
+        <Route path="/" exact component={LoginScreen}/>
+        <Route path="/events" exact component={AllEventsScreen}/>
+        <Route path="/events/:id" component={OneEventScreen}/>
+        <Route path="/new" component={CreateNewScreen}/>
+        <Route path="/todos" component={ToDoListScreen}/>
+      </div>
+    </Router>
+  )
+}
 export default App;
