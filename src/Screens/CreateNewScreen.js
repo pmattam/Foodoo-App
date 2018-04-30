@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
+import CreateNew from '../Components/CreateNew';
 
-class CreateNewScreen extends Component {
-  render() {
+let CreateNewScreen = () =>  {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
+      <div className="Container">
+        <header> 
+          <h1> Create a new event here! </h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+        <p className="intro">
+          Enter event information.
         </p>
+        <CreateNew />
       </div>
     );
   }
-}
 
 export default CreateNewScreen;
