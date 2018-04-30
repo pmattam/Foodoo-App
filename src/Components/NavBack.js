@@ -1,9 +1,10 @@
 import React from 'react';
+import exitdoor from '../exitdoor.svg';
 
 let NavBack = () => {
     return (
       <div className="NavBack">
-          <img src="exitdoor.svg" className="exit-door" alt="back" />
+          <img src={exitdoor} className="exit-door" alt="back" />
       </div>
     )
   }
