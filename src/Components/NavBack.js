@@ -1,5 +1,5 @@
 import React from 'react';
-import exitdoor from '../exitdoor.svg';
+import exitdoor from '../images/exitdoor.svg';
 
 let NavBack = () => {
     return (
