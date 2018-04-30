@@ -1,18 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class OneEventScreen extends Component {
-  render() {
+import EventContainer from '../Components/EventContainer';
+import NavBack from '../Components/NavBack';
+
+let OneEventScreen = () => {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className="OneEventScreen">
+        <p>The Banner Component rendered</p>
+        < EventContainer />
+        < NavBack />
       </div>
-    );
-  }
+    )
 }
 
 export default OneEventScreen;
