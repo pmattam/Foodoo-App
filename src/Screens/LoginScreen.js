@@ -62,4 +62,4 @@ export class Login extends Component {
   }
 }
 
-export default App;
+export default LoginScreen;
