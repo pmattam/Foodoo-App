@@ -5,7 +5,7 @@ import NavBack from '../Components/NavBack';
 
 let OneEventScreen = () => {
     return (
-      <div className="OneEventScreen">
+      <div className="OneEvent-container">
         <p>The Banner Component rendered</p>
         < EventContainer />
         < NavBack />

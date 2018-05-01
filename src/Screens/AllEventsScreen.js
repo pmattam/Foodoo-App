@@ -1,18 +1,39 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class AllEventsScreen extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+import { connect } from 'react-redux';
+
+import shoppingListIcon from '../images/shopping-list-icon.svg';
+
+// import Header from '../Components/Header';
+
+let mapPropsToState = (state) => {
+  return {allEvents: state.eventsList}
+}
+
+let AllEventsScreen = ({allEvents}) => {
+  return (
+      <div className="AllEvents-container">
+        <p>The Banner Component will go here</p>
+        <div>
+          {
+            allEvents.map(event => {
+              return (
+                <div>
+                  <p>{event.eventTitle}</p>
+                  <p>{event.Date}</p>
+                  <div>
+                    <img src={shoppingListIcon}/>
+                    <p>{event.mealType}</p>
+                    <p>{event.eventSize}</p>
+                  </div>
+                </div>
+              )
+            }
+            )
+          }
+        </div>
       </div>
     );
   }
-}
 
-export default AllEventsScreen;
+export default connect(mapPropsToState)(AllEventsScreen);

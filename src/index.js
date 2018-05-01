@@ -9,12 +9,13 @@ import { Provider } from 'react-redux';
 
 let initialState = {
     usersList: [
-        {email: "janelle@j.com", password: "one"},
-        {email: "jaehee@j.com", password: "two"},
-        {email: "dylan@d.com", password: "three"}
+        {userid: "1", email: "janelle@j.com", password: "one"},
+        {userid: "2",email: "jaehee@j.com", password: "two"},
+        {userid: "3",email: "dylan@d.com", password: "three"}
     ],
     eventsList: [
         {
+            eventid: "1",
             eventTitle: "Alexander Graduation",
             eventDate: "17-May-2018",
             eventDescription: "Casual event for a coding bootcamp graduation",
@@ -47,6 +48,7 @@ let initialState = {
             ]
         },
         {
+            eventid: "2",
             eventTitle: "Kim Birthday",
             eventDate: "17-August-2018",
             eventDescription: "Elegant birthday",
@@ -79,6 +81,7 @@ let initialState = {
             ]
         },
         {
+            eventid: "3",
             eventTitle: "Bailey Launch Party",
             eventDate: "17-October-2018",
             eventDescription: "Cool event for company launch party",
@@ -111,7 +114,12 @@ let initialState = {
             ]
         }
     ],    
-    clientsList: [],
+    clientsList: [
+        {clientid: "1", name: "Janelle Alexander"},
+        {clientid: "2", name: "Jaehee Kim"},
+        {clientid: "3", name: "Dylan Bailey"},
+        {clientid: "4", name: "Prathyusha Mattam"},
+    ],
     isLoggedIn: false
 }
 
