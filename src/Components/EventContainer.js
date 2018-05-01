@@ -4,11 +4,10 @@ import EventTitle from './EventTitle';
 import EventDescription from './EventDescription';
 import EventMetadata from './EventMetadata';
 
-let EventContainer = () => {
+let EventContainer = ({allEvents, idOfEventBeingViewed}) => {
     return (
       <div className="EventContainer">
-        <p>The Event Container Component:</p>
-        < EventTitle />
+        < EventTitle title={allEvents.eventTitle} date={allEvents.eventDate}/>
         < EventDescription />
         < EventMetadata />
       </div>
