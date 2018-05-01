@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from '../Components/Hearder'
+import Header from '../Components/Header'
 
 let HomePageScreen = () => 
-  <div class="home-page-container"> 
+  <div className="home-page-container"> 
   <Header />
   </div>
 
