@@ -1,32 +1,31 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
-// import { NavBar } from 'navbar'
-// import logo from './logo.svg';
-// import './App.css';
-import './login.css';
+import "./login.css";
 
-export class LoginScreen extends Component {
+export default class LoginScreen extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      email: '',
-      password: '',
+      email: "",
+      password: ""
     };
-
-    let validateForm = () => {
-      return this.state.email.length > 0 && this.state.password.length > 0;
-    }
-
-    let handleChange = event => {
-      this.setState(
-        {[event.target.id]: event.target.value}
-      );
-    }
-    let handleSubmit = event => {
-      event.preventDefault();
-    }
   }
+
+  validateForm() {
+    return this.state.email.length > 0 && this.state.password.length > 0;
+  }
+
+  handleChange = event => {
+    this.setState({
+      [event.target.id]: event.target.value
+    });
+  }
+
+  handleSubmit = event => {
+    event.preventDefault();
+  }
+
   render() {
     return (
       <div className="Login">
@@ -51,7 +50,7 @@ export class LoginScreen extends Component {
           <Button
             block
             bsSize="large"
-            // disabled={!this.validateForm()}
+            disabled={!this.validateForm()}
             type="submit"
           >
             Login
@@ -62,4 +61,3 @@ export class LoginScreen extends Component {
   }
 }
 
-export default LoginScreen;
