@@ -6,11 +6,10 @@ import Header from '../Components/Header'
 
 let OneEventScreen = () => {
     return (
-      <div className="OneEventScreen">
+      <div className="OneEvent-container">
       <header>
         <Header />
       </header>
-        <p>The Banner Component rendered</p>
         < EventContainer />
         < NavBack />
       </div>
