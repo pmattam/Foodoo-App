@@ -7,7 +7,7 @@ import HomepageScreen from './Screens/HomepageScreen';
 import LoginScreen from './Screens/LoginScreen';
 import AllEventsScreen from './Screens/AllEventsScreen';
 import OneEventScreen from './Screens/OneEventScreen';
-import ToDoListScreen from './Screens/ToDoListScreen';
+import ShoppingList from './Screens/ShoppingList';
 import CreateNewScreen from './Screens/CreateNewScreen';
 
 const App = () => {
@@ -19,7 +19,7 @@ const App = () => {
         <Route path="/events" exact component={AllEventsScreen}/>
         <Route path="/events/:id" component={OneEventScreen}/>
         <Route path="/new" component={CreateNewScreen}/>
-        <Route path="/todos" component={ToDoListScreen}/>
+        <Route path="/shoppinglist" component={ShoppingList}/>
       </div>
     </Router>
   )

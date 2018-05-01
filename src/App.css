@@ -1,3 +1,18 @@
+body {
+  height: 100vh;
+}.home-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-and-description {
+  padding: 120px 0 0 0;
+}
+
+.home-main-logo {
+  height: 100px;
+}
 .main-logo {
   height: 50px;
   padding: 0;
