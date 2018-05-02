@@ -1,6 +1,8 @@
 body {
   height: 100vh;
-}.home-page-container {
+}
+
+.home-page-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,21 +15,40 @@ body {
 .home-main-logo {
   height: 100px;
 }
+
 .main-logo {
-  height: 50px;
+  height: 55px;
   padding: 0;
+}
+
+.new-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 40px;
+}
+
+.space {
+  flex: 1;
 }
 
 .header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px 50px;
+  padding: 30px 40px;
 }
 
-.space {
-  flex: 1;
+.create-New-Icon {
+  height: 40px;
+  padding: 0 20px 0 0;
 }
+
+.filter-Icon {
+  height: 38px;
+  padding: 0 20px 0 0;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

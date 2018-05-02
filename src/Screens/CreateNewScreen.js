@@ -1,14 +1,12 @@
 import React from 'react';
 import CreateNew from '../Components/CreateNew';
-import Header from '../Components/Header';
-
-
+import NewHeader from '../Components/NewHeader'
 
 let CreateNewScreen = () =>  {
     return (
       <div className="Container">
         <header>
-          <Header />
+          <NewHeader />
           <h1> Create a new event here! </h1>
         </header>
         <p className="intro">

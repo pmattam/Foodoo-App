@@ -19,7 +19,9 @@ let AllEventsScreen = ({allEvents}) => {
 
   return (
       <div className="AllEvents-container">
-        <Header />
+        <header>
+          <Header />
+        </header>
         <div>
           {
             allEvents.map(event => {
