@@ -1,4 +1,7 @@
 import React from 'react';
+
+import { Link } from 'react-router-dom';
+
 import exitdoor from '../images/exitdoor.svg';
 
 let NavBack = () => {
@@ -10,7 +13,7 @@ let NavBack = () => {
 
     return (
       <div className="NavBack">
-          <img src={exitdoor} className="exit-door" alt="back" style={style}/>
+        <Link to="/events"><img src={exitdoor} className="exit-door" alt="back" style={style}/></Link>
       </div>
     )
   }
