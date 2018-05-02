@@ -2,6 +2,7 @@ import React from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import "./login.css";
 import { loginAndFetchUserDetails } from "../Lib/api-calls";
+import { connect } from "react-redux";
 
 // export default class LoginScreen extends Component {
 //   constructor(props) {
