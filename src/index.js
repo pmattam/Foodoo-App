@@ -7,6 +7,7 @@ import registerServiceWorker from './registerServiceWorker';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
+
 let initialState = {
     
     currentUser: {},
@@ -164,8 +165,10 @@ let initialState = {
 //refactor for master reducer and create sub reducers
 let reducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'dontexist': {
-            return {...state, eventsList: [...state.usersKey, action.payload]}
+        case 'CREATE_NEW_EVENT': {
+            return {...state, 
+                eventsList: [...state.eventsList, action.payload], 
+                clientsList: [...state.clientsList, {clientName: action.payload.clientName}]}
         }
         default: return state;
     }
