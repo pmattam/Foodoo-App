@@ -1,9 +1,11 @@
 import React from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
-import "./login.css";
-import { loginAndFetchUserDetails } from "../Lib/api-calls";
 import { connect } from "react-redux";
 import mainLogo from '../images/foodoo-logo.png';
+import "./login.css";
+import { loginAndFetchUserDetails } from "../Lib/api-calls";
+import { addUserToStore } from "../Actions/dispatch-actions";
+
 
 // export default class LoginScreen extends Component {
 //   constructor(props) {
@@ -15,7 +17,7 @@ import mainLogo from '../images/foodoo-logo.png';
 //     };
 //   }
 
-let LoginScreenWrapper = ({ state, props }) => {
+let LoginScreenWrapper = ({ state, props, addUserToStore }) => {
 
   let userCredentials = {};
 
@@ -33,7 +35,7 @@ let LoginScreenWrapper = ({ state, props }) => {
                     console.log("USER CREDENTIALS WHEN I LOG IN", user);
                     if(user.jwt) {
                         localStorage.setItem("authorization", user.jwt);
-                        // addUserToStore(user);
+                        addUserToStore(user);
                         props.history.push("/events");
                     } else {
                         alert("Can't log you in");
@@ -97,8 +99,8 @@ let LoginScreenWrapper = ({ state, props }) => {
 
 let mapStateToProps = (state, props) => ({ state, props });
 
-// let mapDispatchToProps = dispatch =>  ({ addUserToStore: (user) => dispatch(addUserToStore(user)) });
+let mapDispatchToProps = dispatch =>  ({ addUserToStore: (user) => dispatch(addUserToStore(user)) });
       
-let LoginScreen = connect(mapStateToProps)(LoginScreenWrapper);
+let LoginScreen = connect(mapStateToProps, mapDispatchToProps)(LoginScreenWrapper);
 
 export default LoginScreen;
