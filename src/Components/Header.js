@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 import mainLogo from '../images/foodoo-logo.png';
-import filterIcon from '../images/filter-Icon.svg';
+import filterIcon from '../images/filter.svg';
 import createNewIcon from '../images/create-new-icon.svg';
 
 let Header = () => {
