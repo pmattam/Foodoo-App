@@ -1,6 +1,6 @@
 import React from 'react';
 import mainLogo from '../images/foodoo-logo.png';
-import LoginScreen from './LoginScreen'
+import LoginScreen from './LoginScreen';
 
 let HomePageScreen = () => 
   <div className="home-page-container">
