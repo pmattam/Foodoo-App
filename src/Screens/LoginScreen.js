@@ -2,6 +2,8 @@ import React from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import "./login.css";
 import { loginAndFetchUserDetails } from "../Lib/api-calls";
+import { connect } from "react-redux";
+import mainLogo from '../images/foodoo-logo.png';
 
 // export default class LoginScreen extends Component {
 //   constructor(props) {
@@ -32,7 +34,7 @@ let LoginScreenWrapper = ({ state, props }) => {
                     if(user.jwt) {
                         localStorage.setItem("authorization", user.jwt);
                         // addUserToStore(user);
-                        // props.history.push("/");
+                        props.history.push("/events");
                     } else {
                         alert("Can't log you in");
                     }
@@ -53,6 +55,15 @@ let LoginScreenWrapper = ({ state, props }) => {
     };
 
     return (
+      <div className="home-page-container">
+
+    <div className="logo-and-description">
+      <div><img src={mainLogo} className="home-main-logo" alt="mainlogo" /></div>
+      <div>
+        <p>Manage your catering service with foodoo</p>
+      </div>
+    </div>
+    <div className="log-in-form">
       <div className="Login">
         <form onSubmit={handleSubmit}>
           <FormGroup controlId="email" bsSize="large">
@@ -79,6 +90,8 @@ let LoginScreenWrapper = ({ state, props }) => {
           </Button>
         </form>
       </div>
+      </div>
+  </div>
     );
 }
 
