@@ -11,29 +11,23 @@ let mapPropsToState = (state) => {
 }
 
 let AllEventsScreen = ({allEvents}) => {
-
-  const style = { //we can get rid of this and the style attribute in the img tag once we do real CSS styling later
-    height: "36px",
-    width: "33px"
-  }
-
   return (
-      <div className="AllEvents-container">
+      <div>
         <header>
           <Header />
         </header>
-        <div>
+        <div className="all-events-container">
           {
             allEvents.map(event => {
               return (
-                <div>
+                <div className="each-event">
                   <p>{event.eventTitle}</p>
-                  <p>{event.Date}</p>
-                  <div>
-                    <img src={shoppingListIcon} alt="shopping-list-icon" style={style}/>
+                  <p>{event.eventDate}</p>
+                  <div className="each-event-details">
                     <p>{event.mealType}</p>
                     <p>{event.eventSize}</p>
                   </div>
+                  <img src={shoppingListIcon} className="shopping-list-icon" alt="shopping-list-icon"/>
                 </div>
               )
             }
