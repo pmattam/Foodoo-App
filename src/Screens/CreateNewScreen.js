@@ -7,7 +7,7 @@ let CreateNewScreen = () =>  {
       <div className="Container">
         <header>
           <NewHeader />
-          <h1> Create a new event here! </h1>
+          <h1> New Event </h1>
         </header>
         <p className="intro">
           Enter event information
