@@ -10,17 +10,18 @@ import Header from '../Components/Header';
 let mapStateToProps = (state, props) => {
   return {
     allEvents: state.eventsList,
-    eventid: props.match.params.id
+    idOfEventBeingViewed: props.match.params.id
   }
 }
 
-let OneEventScreen = () => {
+let OneEventScreen = ({allEvents, idOfEventBeingViewed}) => {
+
     return (
       <div className="OneEvent-container">
       <header>
         <Header />
       </header>
-        < EventContainer />
+        < EventContainer allEvents={allEvents} idOfEventBeingViewed={idOfEventBeingViewed}/>
         < NavBack />
       </div>
     )

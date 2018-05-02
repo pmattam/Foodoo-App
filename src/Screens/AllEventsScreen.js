@@ -4,16 +4,22 @@ import { connect } from 'react-redux';
 
 import shoppingListIcon from '../images/shopping-list-icon.svg';
 
-// import Header from '../Components/Header';
+import Header from '../Components/Header';
 
 let mapPropsToState = (state) => {
   return {allEvents: state.eventsList}
 }
 
 let AllEventsScreen = ({allEvents}) => {
+
+  const style = { //we can get rid of this and the style attribute in the img tag once we do real CSS styling later
+    height: "36px",
+    width: "33px"
+  }
+
   return (
       <div className="AllEvents-container">
-        <p>The Banner Component will go here</p>
+        <Header />
         <div>
           {
             allEvents.map(event => {
@@ -22,7 +28,7 @@ let AllEventsScreen = ({allEvents}) => {
                   <p>{event.eventTitle}</p>
                   <p>{event.Date}</p>
                   <div>
-                    <img src={shoppingListIcon}/>
+                    <img src={shoppingListIcon} alt="shopping-list-icon" style={style}/>
                     <p>{event.mealType}</p>
                     <p>{event.eventSize}</p>
                   </div>

@@ -4,7 +4,7 @@ import React from 'react';
 let EventTitle = ({title, date}) => {
     return (
       <div className="EventTitle-container">
-        <p>{title}</p><p>{date}</p>
+        <h2>{title.toUpperCase()}</h2><p>{date}</p>
       </div>
     )
   }
