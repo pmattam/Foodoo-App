@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import shoppingListIcon from '../images/shopping-list-icon.svg';
 
-// import Header from '../Components/Header';
+import Header from '../Components/Header';
 
 let mapPropsToState = (state) => {
   return {allEvents: state.eventsList}
@@ -13,6 +13,9 @@ let mapPropsToState = (state) => {
 let AllEventsScreen = ({allEvents}) => {
   return (
       <div className="AllEvents-container">
+        <header>
+          <Header />
+        </header>
         <p>The Banner Component will go here</p>
         <div>
           {
