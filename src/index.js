@@ -8,10 +8,14 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
 let initialState = {
+    
+    currentUser: {},
+    
     usersList: [
         {userid: "1", email: "janelle@j.com", password: "one"},
         {userid: "2",email: "jaehee@j.com", password: "two"},
-        {userid: "3",email: "dylan@d.com", password: "three"}
+        {userid: "3",email: "dylan@d.com", password: "three"},
+        {userid: "4",email: "prathyusha@p.com", password: "four"}
     ],
     eventsList: [
         {
@@ -31,17 +35,17 @@ let initialState = {
             },
             shoppingList: [
                 {
-                item: "cavatelli",
+                ingredient: "cavatelli",
                 quantity: 20,
                 unit: "lbs"
                 },
                 {
-                item: "bread",
+                ingredient: "bread",
                 quantity: 20,
                 unit: "loaves"
                 },
                 {
-                item: "Old Bay Seasoning",
+                ingredient: "Old Bay Seasoning",
                 quantity: 10,
                 unit: "cans"
                 }
@@ -64,17 +68,17 @@ let initialState = {
             },
             shoppingList: [
                 {
-                item: "chocolate",
+                ingredient: "chocolate",
                 quantity: 20,
                 unit: "lbs"
                 },
                 {
-                item: "shrimp",
+                ingredient: "shrimp",
                 quantity: 20,
                 unit: "loaves"
                 },
                 {
-                item: "champagne",
+                ingredient: "champagne",
                 quantity: 10,
                 unit: "bottles"
                 }
@@ -97,17 +101,17 @@ let initialState = {
             },
             shoppingList: [
                 {
-                item: "lingonberry jam",
+                ingredient: "lingonberry jam",
                 quantity: 20,
                 unit: "jars"
                 },
                 {
-                item: "lemons",
+                ingredient: "lemons",
                 quantity: 200,
                 unit: "units"
                 },
                 {
-                item: "champagne",
+                ingredient: "champagne",
                 quantity: 10,
                 unit: "bottles"
                 }
@@ -130,17 +134,17 @@ let initialState = {
             },
             shoppingList: [
                 {
-                item: "spinach",
+                ingredient: "spinach",
                 quantity: 20,
                 unit: "lbs"
                 },
                 {
-                item: "leg of lamb",
+                ingredient: "leg of lamb",
                 quantity: 30,
                 unit: "lbs"
                 },
                 {
-                item: "chardonnay",
+                ingredient: "chardonnay",
                 quantity: 10,
                 unit: "bottles"
                 }
@@ -148,10 +152,10 @@ let initialState = {
         }
     ],    
     clientsList: [
-        {clientid: "1", name: "Janelle Alexander"},
-        {clientid: "2", name: "Jaehee Kim"},
-        {clientid: "3", name: "Dylan Bailey"},
-        {clientid: "4", name: "Prathyusha Mattam"},
+        {clientid: "1", clientName: "Janelle Alexander"},
+        {clientid: "2", clientName: "Jaehee Kim"},
+        {clientid: "3", clientName: "Dylan Bailey"},
+        {clientid: "4", clientName: "Prathyusha Mattam"},
     ],
     isLoggedIn: false
 }
@@ -160,8 +164,8 @@ let initialState = {
 //refactor for master reducer and create sub reducers
 let reducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'AUTHENTICATE_USER': {
-            return {...state, usersKey: [...state.usersKey, action.payload]}
+        case 'dontexist': {
+            return {...state, eventsList: [...state.usersKey, action.payload]}
         }
         default: return state;
     }
