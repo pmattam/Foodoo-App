@@ -9,7 +9,7 @@ let ShoppingListCard = ({shoppingList}) => {
           {
             shoppingList.map(item => {
               return (
-                <li><span>{item.quantity} </span><span>{item.unit} of </span><span>{item.item}</span></li>
+                <li><span>{item.quantity} </span><span>{item.unit} of </span><span>{item.ingredient}</span></li>
               );
             })
           }

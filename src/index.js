@@ -12,14 +12,14 @@ let initialState = {
     currentUser: {},
     
     usersList: [
-        {userId: "1", email: "janelle@j.com", password: "one"},
-        {userId: "2",email: "jaehee@j.com", password: "two"},
-        {userId: "3",email: "dylan@d.com", password: "three"},
-        {userId: "4",email: "prathyusha@p.com", password: "four"}
+        {userid: "1", email: "janelle@j.com", password: "one"},
+        {userid: "2",email: "jaehee@j.com", password: "two"},
+        {userid: "3",email: "dylan@d.com", password: "three"},
+        {userid: "4",email: "prathyusha@p.com", password: "four"}
     ],
     eventsList: [
         {
-            eventId: "1",
+            eventid: "1",
             eventTitle: "Alexander Graduation",
             eventDate: "17-May-2018",
             eventDescription: "Casual event for a coding bootcamp graduation",
@@ -35,24 +35,24 @@ let initialState = {
             },
             shoppingList: [
                 {
-                item: "cavatelli",
+                ingredient: "cavatelli",
                 quantity: 20,
                 unit: "lbs"
                 },
                 {
-                item: "bread",
+                ingredient: "bread",
                 quantity: 20,
                 unit: "loaves"
                 },
                 {
-                item: "Old Bay Seasoning",
+                ingredient: "Old Bay Seasoning",
                 quantity: 10,
                 unit: "cans"
                 }
             ]
         },
         {
-            eventId: "2",
+            eventid: "2",
             eventTitle: "Kim Birthday",
             eventDate: "17-August-2018",
             eventDescription: "Elegant birthday",
@@ -68,24 +68,24 @@ let initialState = {
             },
             shoppingList: [
                 {
-                item: "chocolate",
+                ingredient: "chocolate",
                 quantity: 20,
                 unit: "lbs"
                 },
                 {
-                item: "shrimp",
+                ingredient: "shrimp",
                 quantity: 20,
                 unit: "loaves"
                 },
                 {
-                item: "champagne",
+                ingredient: "champagne",
                 quantity: 10,
                 unit: "bottles"
                 }
             ]
         },
         {
-            eventId: "3",
+            eventid: "3",
             eventTitle: "Bailey Launch Party",
             eventDate: "17-October-2018",
             eventDescription: "Cool event for company launch party",
@@ -101,24 +101,24 @@ let initialState = {
             },
             shoppingList: [
                 {
-                item: "lingonberry jam",
+                ingredient: "lingonberry jam",
                 quantity: 20,
                 unit: "jars"
                 },
                 {
-                item: "lemons",
+                ingredient: "lemons",
                 quantity: 200,
                 unit: "units"
                 },
                 {
-                item: "champagne",
+                ingredient: "champagne",
                 quantity: 10,
                 unit: "bottles"
                 }
             ]
         },
         {
-            eventId: "4",
+            eventid: "4",
             eventTitle: "Mattam Anniversary",
             eventDate: "16-December-2018",
             eventDescription: "Festive wedding anniversary",
@@ -134,17 +134,17 @@ let initialState = {
             },
             shoppingList: [
                 {
-                item: "spinach",
+                ingredient: "spinach",
                 quantity: 20,
                 unit: "lbs"
                 },
                 {
-                item: "leg of lamb",
+                ingredient: "leg of lamb",
                 quantity: 30,
                 unit: "lbs"
                 },
                 {
-                item: "chardonnay",
+                ingredient: "chardonnay",
                 quantity: 10,
                 unit: "bottles"
                 }
@@ -152,10 +152,10 @@ let initialState = {
         }
     ],    
     clientsList: [
-        {clientId: "1", name: "Janelle Alexander"},
-        {clientId: "2", name: "Jaehee Kim"},
-        {clientId: "3", name: "Dylan Bailey"},
-        {clientId: "4", name: "Prathyusha Mattam"},
+        {clientid: "1", clientName: "Janelle Alexander"},
+        {clientid: "2", clientName: "Jaehee Kim"},
+        {clientid: "3", clientName: "Dylan Bailey"},
+        {clientid: "4", clientName: "Prathyusha Mattam"},
     ],
     isLoggedIn: false
 }
@@ -164,8 +164,8 @@ let initialState = {
 //refactor for master reducer and create sub reducers
 let reducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'AUTHENTICATE_USER': {
-            return {...state, usersKey: [...state.usersKey, action.payload]}
+        case 'dontexist': {
+            return {...state, eventsList: [...state.usersKey, action.payload]}
         }
         default: return state;
     }

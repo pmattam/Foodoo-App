@@ -1,63 +1,79 @@
 import React from 'react';
 
-let CreateNew = () => {
-    return (
-      <div className="form-container">
-      <form>
+import { connect } from 'react-redux';
 
-        <div className="client-name">
-        <p> Name of client </p>
-          <input type="text" name="client-name-input"/>
-        </div>
+const CREATE_NEW_EVENT = 'CREATE_NEW_EVENT';
 
-       <div className="date">
-        <p> Date </p>
-        <input type="text" name="date-input" />
-        </div>
-
-
-        <div className="event-type">
-        <p> Event Type </p>  
-        <label className="event-type-dropdown">
-          <select className="event-type">
-          <option value="wedding">Wedding</option>
-          <option value="graduation">Graduation</option>
-          <option value="corporate">Corporate</option>
-          <option value="anniversary">anniversary</option>
-          <option value="birthday">Birthday</option>
-          </select>
-        </label>
-        </div>
-
-        <div className="number-of-guests">
-        <p> Number of Guests </p>
-        <input type="text" name="number-of-guests-input" />
-        </div>
-
-        <div className="meal-type">
-        <p> Meal Type </p>
-        <label>
-          <select className="meal-type-drop-down">
-          <option value="buffet">Buffet</option>
-          <option value="sit-down">Sit Down</option>
-          </select>
-        </label>
-        </div>
-
-        <div className="menu">
-          <p> Menu </p>
-          <input type="text" name="menu-input" />
-        </div>
-
-        <div className="shopping-list">
-          <p>  Shopping List </p>
-          <input type="text" name="shopping-list-input" />
-        </div>
-
-
-      </form>
-      </div>
-    )
+let mapDispatchToProps = (dispatch) => {
+  return {actionCreatorCreateNewEvent: (details) => dispatch({type: CREATE_NEW_EVENT, payload: details})};
 }
 
-export default CreateNew;
+class CreateNew extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {}
+  }
+
+    render() {
+      return (
+        <div className="form-container">
+          <form>
+
+            <div className="client-name">
+              <p> Client Name </p>
+              <input type="text" name="client-name-input" onChange={(event) => this.setState({clientName: event.target.value})}/>
+            </div>
+
+            <div className="date">
+              <p> Date </p>
+              <input type="text" name="date-input" onChange={(event) => this.setState({eventDate: event.target.value})}/>
+            </div>
+
+            <div className="event-title">
+              <p> Event Title </p>
+              <input type="text" name="event-title-input" onChange={(event) => this.setState({eventTitle: event.target.value})}/>
+            </div>
+
+            <div className="event-description">
+              <p> Event Description </p>
+              <textarea name="event-description-input" onChange={(event) => this.setState({eventDescription: event.target.value})}/>
+            </div>
+    
+    
+            <div className="event-type">
+              <p> Event Type </p>  
+              <label className="event-type-dropdown">
+                <select className="event-type" onChange={(event) => this.setState({eventType: event.target.value})}>
+                  <option default>Select</option>
+                  <option value="Wedding">Wedding</option>
+                  <option value="Graduation">Graduation</option>
+                  <option value="Corporate">Corporate</option>
+                  <option value="Anniversary">Anniversary</option>
+                  <option value="Birthday">Birthday</option>
+                </select>
+              </label>
+            </div>
+    
+            <div className="number-of-guests">
+              <p> Number of Guests </p>
+              <input type="number" name="number-of-guests-input" onChange={(event) => this.setState({eventSize: event.target.value})}/>
+            </div>
+    
+            <div className="meal-type">
+              <p> Meal Type </p>
+              <label>
+                <select className="meal-type-drop-down" onChange={(event) => this.setState({mealType: event.target.value})}>
+                  <option default>Select</option>
+                  <option value="Buffet">Buffet</option>
+                  <option value="Sit-down">Sit Down</option>
+                </select>
+              </label>
+            </div>
+            <button onClick={ () => this.props.actionCreatorCreateNewEvent(this.state) }>Save</button>
+          </form>
+        </div>
+      )
+    }    
+}
+
+export default connect(null, mapDispatchToProps)(CreateNew);
