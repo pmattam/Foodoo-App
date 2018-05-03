@@ -38,6 +38,11 @@ let reducer = (state = initialState, action) => {
                 eventsList: [...state.eventsList, action.payload]
             }
         }
+        case "REMOVE_USER_FROM_STORE": {
+            return {
+                ...state, currentUser: action.payload, isLoggedIn: false
+            }
+        }
         default: return state;
     }
 }
