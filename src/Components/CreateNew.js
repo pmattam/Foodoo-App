@@ -4,8 +4,15 @@ import { connect } from 'react-redux';
 
 const CREATE_NEW_EVENT = 'CREATE_NEW_EVENT';
 
+let newEventCreator = (details) => {
+  return {
+    type: CREATE_NEW_EVENT,
+    payload: details
+  }
+}
+
 let mapDispatchToProps = (dispatch) => {
-  return {actionCreatorCreateNewEvent: (details) => dispatch({type: CREATE_NEW_EVENT, payload: details})};
+  return {newEventCreator: (details) => dispatch(newEventCreator(details))};
 }
 
 class CreateNew extends React.Component {
@@ -17,7 +24,6 @@ class CreateNew extends React.Component {
     render() {
       return (
         <div className="form-container">
-          <form>
 
             <div className="client-name">
               <p> Client Name </p>
@@ -69,8 +75,7 @@ class CreateNew extends React.Component {
                 </select>
               </label>
             </div>
-            <button onClick={ () => this.props.actionCreatorCreateNewEvent(this.state) }>Save</button>
-          </form>
+            <button onClick={ () => this.props.newEventCreator(this.state) }>Save</button>
         </div>
       )
     }    
