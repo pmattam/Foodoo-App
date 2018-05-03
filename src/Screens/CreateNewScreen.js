@@ -1,6 +1,7 @@
 import React from 'react';
 import CreateNew from '../Components/CreateNew';
-import NewHeader from '../Components/NewHeader'
+import NewHeader from '../Components/NewHeader';
+
 
 let CreateNewScreen = () =>  {
     return (

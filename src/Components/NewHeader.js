@@ -7,7 +7,7 @@ let NewHeader = () => {
     <div className="new-header"> 
         <div><Link to="/"><img src={mainLogo} className="main-logo" alt="mainlogo" /></Link></div>
         <div className="space"></div>
-        <div><Link to="/login">Log out</Link></div>
+        <div><Link to="/">Log out</Link></div>
     </div>
     )
 }

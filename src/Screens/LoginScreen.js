@@ -6,6 +6,8 @@ import "./login.css";
 import { loginAndFetchUserDetails } from "../Lib/api-calls";
 import { addUserToStore } from "../Actions/dispatch-actions";
 
+import { Link } from 'react-router-dom';
+
 
 // export default class LoginScreen extends Component {
 //   constructor(props) {
@@ -63,6 +65,14 @@ let LoginScreenWrapper = ({ state, props, addUserToStore }) => {
       <div><img src={mainLogo} className="home-main-logo" alt="mainlogo" /></div>
       <div>
         <p>Manage your catering service with foodoo</p>
+        <Link to={"/register"}>
+        <Button
+            block
+            bsSize="large"
+          >
+            Sign up now!
+          </Button>
+          </Link>
       </div>
     </div>
     <div className="log-in-form">

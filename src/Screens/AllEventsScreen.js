@@ -9,14 +9,14 @@ import shoppingListIcon from '../images/shopping-list-icon.svg';
 import Header from '../Components/Header';
 
 import { getAllEvents } from "../Lib/api-calls";
-import { addEventsToStore } from "../Actions/dispatch-actions";
+import { loadEventsToStore } from "../Actions/dispatch-actions";
 
 let mapPropsToState = (state) => {
   return { allEvents: state.eventsList}
 };
 
 let mapDispatchToProps = dispatch => {
-  return { addEventsToStore: events => dispatch(addEventsToStore(events)) }
+  return { loadEventsToStore: events => dispatch(loadEventsToStore(events)) }
 };
 
 
@@ -27,7 +27,7 @@ class AllEventsScreen extends Component {
       .then(res => res.json())
       .then(events => {
         console.log(events);
-        this.props.addEventsToStore(events);
+        this.props.loadEventsToStore(events);
       }); 
   }
 
