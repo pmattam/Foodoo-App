@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { Button, FormGroup, FormControl } from "react-bootstrap";
 import { connect } from "react-redux";
 import mainLogo from '../images/foodoo-logo.png';
 import "./login.css";
@@ -65,41 +65,48 @@ let LoginScreenWrapper = ({ state, props, addUserToStore }) => {
       <div><img src={mainLogo} className="home-main-logo" alt="mainlogo" /></div>
       <div>
         <p>Manage your catering service with foodoo</p>
-        <Link to={"/register"}>
-        <Button
-            block
-            bsSize="large"
-          >
-            Sign up now!
-          </Button>
-          </Link>
       </div>
     </div>
     <div className="log-in-form">
-      <div className="Login">
-        <form onSubmit={handleSubmit}>
+      <div className="login-and-sign-in">
+        <form onSubmit={handleSubmit} className="login-form">
           <FormGroup controlId="email" bsSize="large">
-            <ControlLabel>Email</ControlLabel>
             <FormControl
+              placeholder="email"
               autoFocus
               type="email"
               onChange={readEmail}
             />
           </FormGroup>
           <FormGroup controlId="password" bsSize="large">
-            <ControlLabel>Password</ControlLabel>
             <FormControl
+              placeholder="password"
               type="password"
               onChange={readPassword}
             />
+
           </FormGroup>
-          <Button
-            block
-            bsSize="large"
-            type="submit"
-          >
-            Login
-          </Button>
+          <div className="sl-form">
+              <div className="sl">
+                <Link to={"/register"}>    
+                  <Button
+                    block
+                    bsSize="large"
+                  >
+                    Sign up now!
+                  </Button>
+                  </Link>
+              </div>
+              <div className="sl">
+                <Button
+                  block
+                  bsSize="large"
+                  type="submit"
+                >
+                  Login
+                </Button>
+              </div>
+          </div>
         </form>
       </div>
       </div>
