@@ -45,21 +45,23 @@ class AllEventsScreen extends Component {
               allEvents.map(event => {
                 return (
                   <div key={event.eventid} className="border">
-                    <Link to={`/events/${event.eventid}`}>
                    <div className="each-event">
+                   <Link to={`/events/${event.eventid}`}>
+                   <div className="title-date">
                       <p>{event.eventtitle}</p>
                       <p>{event.eventdate}</p>
+                  </div>
+                  </Link>
                     <div className="each-event-details">
                         <p>{event.mealtype}</p>
                         <p>{event.eventsize}</p>
-                        <Link to="/shoppinglist"> <img src={shoppingListIcon} className="shopping-list-icon" alt="shopping-list-icon" /> </Link>
+                        <p>{event.shoppingList}</p>
+                        <Link to={`/shoppinglist/${event.eventid}`}> <img src={shoppingListIcon} className="shopping-list-icon" alt="shopping-list-icon" /> </Link>
                      </div>
                    </div>  
-                    </Link>
                   </div>
                 )
               }
-
               )
             }
           </div>

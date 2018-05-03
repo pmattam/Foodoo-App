@@ -17,7 +17,7 @@ const App = () => {
         <Route path="/events" exact component={AllEventsScreen}/>
         <Route path="/events/:id" component={OneEventScreen}/>
         <Route path="/new" component={CreateNewScreen}/>
-        <Route path="/shoppinglist" component={ShoppingList}/>
+        <Route path="/shoppinglist/:id" component={ShoppingList}/>
       </div>
     </Router>
   )
