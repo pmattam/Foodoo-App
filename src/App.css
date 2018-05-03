@@ -40,13 +40,59 @@ body {
 }
 
 .create-New-Icon {
-  height: 40px;
+  height: 30px;
   padding: 0 20px 0 0;
 }
 
 .filter-Icon {
-  height: 38px;
+  height: 30px;
   padding: 0 20px 0 0;
+}
+
+.all-events-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.all-events-container a {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-decoration: none;
+  color: black;
+}
+
+.border {
+  padding: 30px;
+}
+
+.each-event {
+  border: solid 1px black;
+  height: 270px;
+  width: 270px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;  
+}
+
+.each-event-details {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  align-items: center;
+}
+
+.each-event-details p, a {
+  padding: 0 10px;
+  font-size: 20px;
+}
+.shopping-list-icon {
+  height: 30px;
+}
+
+.title {
+  font-size: 30px;
+  text-align: center;
 }
 
 @keyframes App-logo-spin {

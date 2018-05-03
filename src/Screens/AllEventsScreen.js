@@ -19,6 +19,7 @@ let mapDispatchToProps = dispatch => {
   return { addEventsToStore: events => dispatch(addEventsToStore(events)) }
 };
 
+
 class AllEventsScreen extends Component {
 
   componentDidMount() {
@@ -35,25 +36,30 @@ class AllEventsScreen extends Component {
     let allEvents = this.props.allEvents;
 
     return (
-        <div className="AllEvents-container">
+        <div>
           <header>
             <Header />
           </header>
-          <div>
+        <div className="all-events-container">
             {
               allEvents.map(event => {
                 return (
+                  <div key={event.eventid} className="border">
                     <Link to={`/events/${event.eventid}`}>
+                   <div className="each-event">
                       <p>{event.eventtitle}</p>
                       <p>{event.eventdate}</p>
-                      <div>
+                    <div className="each-event-details">
                         <p>{event.mealtype}</p>
                         <p>{event.eventsize}</p>
-                        <img src={shoppingListIcon} alt="shopping-list-icon" style={this.style}/>
-                      </div>
+                        <Link to="/shoppinglist"> <img src={shoppingListIcon} className="shopping-list-icon" alt="shopping-list-icon" /> </Link>
+                     </div>
+                   </div>  
                     </Link>
+                  </div>
                 )
               }
+
               )
             }
           </div>
