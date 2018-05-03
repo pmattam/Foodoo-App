@@ -7,3 +7,12 @@ export let loginAndFetchUserDetails = (userCredentials) =>
             "Content-Type": "application/json"
         })
     })
+
+export let getAllEvents = () =>
+    fetch("http://localhost:3001/events", {
+        method: "GET",
+        mode: "cors",
+        headers: new Headers({
+            "Authorization": `Bearer ${localStorage.getItem("authorization")}`
+        })
+    })

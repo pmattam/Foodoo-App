@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 
@@ -8,42 +8,58 @@ import shoppingListIcon from '../images/shopping-list-icon.svg';
 
 import Header from '../Components/Header';
 
+import { getAllEvents } from "../Lib/api-calls";
+import { addEventsToStore } from "../Actions/dispatch-actions";
+
 let mapPropsToState = (state) => {
-  return {allEvents: state.eventsList}
-}
+  return { allEvents: state.eventsList}
+};
 
-let AllEventsScreen = ({allEvents}) => {
+let mapDispatchToProps = dispatch => {
+  return { addEventsToStore: events => dispatch(addEventsToStore(events)) }
+};
 
-  const style = { //we can get rid of this and the style attribute in the img tag once we do real CSS styling later
-    height: "36px",
-    width: "33px"
+class AllEventsScreen extends Component {
+
+  componentDidMount() {
+    getAllEvents() 
+      .then(res => res.json())
+      .then(events => {
+        console.log(events);
+        this.props.addEventsToStore(events);
+      }); 
   }
 
-  return (
-      <div className="AllEvents-container">
-        <header>
-          <Header />
-        </header>
-        <div>
-          {
-            allEvents.map(event => {
-              return (
-                  <Link to={`/events/${event.eventid}`}>
-                    <p>{event.eventTitle}</p>
-                    <p>{event.Date}</p>
-                    <div>
-                      <p>{event.mealType}</p>
-                      <p>{event.eventSize}</p>
-                      <img src={shoppingListIcon} alt="shopping-list-icon" style={style}/>
-                    </div>
-                  </Link>
+  render() {
+
+    let allEvents = this.props.allEvents;
+
+    return (
+        <div className="AllEvents-container">
+          <header>
+            <Header />
+          </header>
+          <div>
+            {
+              allEvents.map(event => {
+                return (
+                    <Link to={`/events/${event.eventid}`}>
+                      <p>{event.eventtitle}</p>
+                      <p>{event.eventdate}</p>
+                      <div>
+                        <p>{event.mealtype}</p>
+                        <p>{event.eventsize}</p>
+                        <img src={shoppingListIcon} alt="shopping-list-icon" style={this.style}/>
+                      </div>
+                    </Link>
+                )
+              }
               )
             }
-            )
-          }
+          </div>
         </div>
-      </div>
     );
   }
+}
 
-export default connect(mapPropsToState)(AllEventsScreen);
+export default connect(mapPropsToState, mapDispatchToProps)(AllEventsScreen);
