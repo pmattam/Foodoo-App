@@ -8,7 +8,7 @@ let mapStateToProps = (state, props) => {
     id: props.match.params.id }
 };
 
-let ShoppingList = ({allEvents, id}) =>  {
+let ShoppingListScreen = ({allEvents, id}) =>  {
   console.log(id);
   let theEvent = allEvents.find(event => event.eventid === parseInt(id, 10))
   console.log(theEvent);
@@ -24,5 +24,5 @@ let ShoppingList = ({allEvents, id}) =>  {
   )
 }
 
-export default connect(mapStateToProps)(ShoppingList);
+export default connect(mapStateToProps)(ShoppingListScreen);
 

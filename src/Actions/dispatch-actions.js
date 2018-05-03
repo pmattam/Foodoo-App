@@ -1,5 +1,6 @@
 const ADD_USER_TO_STORE = "ADD_USER_TO_STORE";
 const LOAD_EVENTS_TO_STORE = "LOAD_EVENTS_TO_STORE";
+const CREATE_NEW_EVENT_METADATA = 'CREATE_NEW_EVENT_METADATA';
 const CREATE_NEW_EVENT = 'CREATE_NEW_EVENT';
 
 export let addUserToStore = (user) => ({
@@ -12,6 +13,12 @@ export let loadEventsToStore = (events) => ({
     payload: { events }
 });
 
+export let newEventMetadataCreator = (metadata) => {
+    return {
+        type: CREATE_NEW_EVENT_METADATA,
+        payload: metadata
+    };
+}
 
 export let newEventCreator = (details) => {
   return {
@@ -19,3 +26,4 @@ export let newEventCreator = (details) => {
     payload: details
   }
 }
+
