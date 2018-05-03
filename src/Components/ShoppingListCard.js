@@ -1,13 +1,14 @@
 import React from 'react';
 
 
-let ShoppingListCard = ({shoppingList}) => {
+let ShoppingListCard = ({shoppinglist}) => {
+  
     return (
       <div className="ShoppingListCard">
         <h4>SHOPPING LIST</h4>
         <ul>
           {
-            shoppingList.map(item => {
+            shoppinglist.map(item => {
               return (
                 <li><span>{item.quantity} </span><span>{item.unit} of </span><span>{item.ingredient}</span></li>
               );
