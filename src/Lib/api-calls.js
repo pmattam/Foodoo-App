@@ -16,3 +16,13 @@ export let getAllEvents = () =>
             "Authorization": `Bearer ${localStorage.getItem("authorization")}`
         })
     })
+
+export let postNewEvent = (eventDetails) => 
+    fetch("http://localhost:3001/events", {
+        method: "POST",
+        mode: "cors",
+        body: JSON.stringify(eventDetails),
+        headers: new Headers({
+            "Authorization": `Bearer ${localStorage.getItem("authorization")}`
+        })
+    })

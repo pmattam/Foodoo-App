@@ -12,20 +12,10 @@ let initialState = {
     
     currentUser: {},
     
-    usersList: [
-        {userid: "1", email: "janelle@j.com", password: "one"},
-        {userid: "2",email: "jaehee@j.com", password: "two"},
-        {userid: "3",email: "dylan@d.com", password: "three"},
-        {userid: "4",email: "prathyusha@p.com", password: "four"}
-    ],
+    usersList: [],
+
     eventsList: [],
 
-    clientsList: [
-        {clientid: "1", clientName: "Janelle Alexander"},
-        {clientid: "2", clientName: "Jaehee Kim"},
-        {clientid: "3", clientName: "Dylan Bailey"},
-        {clientid: "4", clientName: "Prathyusha Mattam"},
-    ],
     isLoggedIn: false
 }
 
@@ -33,7 +23,7 @@ let initialState = {
 //refactor for master reducer and create sub reducers
 let reducer = (state = initialState, action) => {
     switch (action.type) {
-        case "ADD_EVENTS_TO_STORE": {
+        case "LOAD_EVENTS_TO_STORE": {
             return {
                 ...state, eventsList: action.payload.events
             }
@@ -45,8 +35,8 @@ let reducer = (state = initialState, action) => {
         }
         case 'CREATE_NEW_EVENT': {
             return {...state, 
-                eventsList: [...state.eventsList, action.payload], 
-                clientsList: [...state.clientsList, {clientName: action.payload.clientName}]}
+                eventsList: [...state.eventsList, action.payload]
+            }
         }
         default: return state;
     }
@@ -62,4 +52,5 @@ let UI =
 
 
 ReactDOM.render(UI, document.getElementById('root'));
+
 registerServiceWorker();
