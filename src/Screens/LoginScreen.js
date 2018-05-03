@@ -49,12 +49,12 @@ let LoginScreenWrapper = ({ state, props, addUserToStore }) => {
     };
 
     let readEmail = event => {
-      console.log(event.target.value);
+      //console.log(event.target.value);
       userCredentials.email = event.target.value;
     };
 
     let readPassword = event => {
-      console.log(event.target.value);
+      //console.log(event.target.value);
       userCredentials.password = event.target.value;
     };
 

@@ -9,7 +9,8 @@ import OneEventScreen from './Screens/OneEventScreen';
 import ShoppingList from './Screens/ShoppingList';
 import CreateNewScreen from './Screens/CreateNewScreen';
 import RegisterScreen from './Screens/RegisterScreen';
-
+import LogoutScreen from './Screens/LogoutScreen';
+ 
 const App = () => {
   return (
     <Router>
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/new" component={CreateNewScreen}/>
         <Route path="/shoppinglist/:id" component={ShoppingList}/>
         <Route path="/register" component={RegisterScreen}/>
+        <Route path="/logout" component={LogoutScreen}/>
       </div>
     </Router>
   )
