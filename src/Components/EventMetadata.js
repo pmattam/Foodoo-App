@@ -7,7 +7,7 @@ import ClientName from '../Components/ClientName';
 import MenuCard from '../Components/MenuCard';
 import ShoppingListCard from '../Components/ShoppingListCard';
 
-let EventMetadata = ({size, type, meal, client, menu, shoppingList}) => {
+let EventMetadata = ({size, type, meal, client, menu, shoppinglist}) => {
     return (
       <div className="EventMetadata">
         < EventSize size={size}/>
@@ -15,7 +15,7 @@ let EventMetadata = ({size, type, meal, client, menu, shoppingList}) => {
         < MealType meal={meal}/>
         < ClientName client={client}/>
         < MenuCard menu={menu}/>
-        < ShoppingListCard shoppingList={shoppingList}/>
+        < ShoppingListCard shoppinglist={shoppinglist}/>
       </div>
     )
   }
