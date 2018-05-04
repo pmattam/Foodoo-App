@@ -16,7 +16,13 @@ let initialState = {
 
     eventsList: [],
 
-    isLoggedIn: false
+    isLoggedIn: false,
+
+    creatingNewEvent: false,
+
+    newEvent: {},
+
+    displayNext: false
 }
 
 
@@ -33,11 +39,25 @@ let reducer = (state = initialState, action) => {
                 ...state, currentUser: action.payload, isLoggedIn: true
             }
         }
-        case 'CREATE_NEW_EVENT': {
-            return {...state, 
-                eventsList: [...state.eventsList, action.payload]
+        case 'DISPLAY_NEXT': {
+            return {...state, displayNext: true, creatingNewEvent: true
             }
         }
+        // why doesn't this work?
+        // case 'CREATE_NEW_EVENT': {
+        //     return {...state, newEvent: {...state.newEvent, action.payload}}
+        //     }
+
+        case 'CREATE_NEW_EVENT': {
+            let newObject = Object.assign(state.newEvent, action.payload);
+            return {...state, newEvent: newObject}
+            }
+
+        case 'DONE_EDITING': {
+            return {...state, creatingNewEvent: false, newEvent: {}, displayNext: false}
+            }
+
+
         default: return state;
     }
 }

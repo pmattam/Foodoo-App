@@ -1,9 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import { connect } from 'react-redux';
 
+import { displayNext } from "../Actions/dispatch-actions";
+import { newEventCreator } from "../Actions/dispatch-actions";
+
 let mapDispatchToProps = (dispatch) => {
-  return {newEventMetadataCreator: (metadata) => dispatch(newEventMetadataCreator(metadata))};
+  return {
+    newEventCreator: (details) => dispatch(newEventCreator(details)),
+    displayNext: () => dispatch(displayNext())
+  };
 }
 
 class NewEventMetadataForm extends React.Component {
@@ -14,8 +20,9 @@ class NewEventMetadataForm extends React.Component {
   render() {
     
     let clickNext = () => {
-      this.setState({creatingPartOne: false});
-      this.props.newEventMetadataCreator(this.state);
+      this.props.displayNext();
+      this.props.newEventCreator(this.state);
+      this.props.setCreateNewMode();
     }
 
     return (
@@ -57,4 +64,4 @@ class NewEventMetadataForm extends React.Component {
   }
 }
 
-export default connect(null, mapDispatchToProps)(NewEventMetaDataForm);
+export default connect(null, mapDispatchToProps)(NewEventMetadataForm);

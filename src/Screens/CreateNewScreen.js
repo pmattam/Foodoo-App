@@ -1,19 +1,57 @@
 import React from 'react';
-import CreateNew from '../Components/CreateNew';
+import { connect } from 'react-redux';
+
 import NewHeader from '../Components/NewHeader';
+import NewEventMetadataForm from '../Components/NewEventMetadataForm';
+import NewEventMenuForm from '../Components/NewEventMenuForm';
+import NewEventIngredientForm from '../Components/NewEventIngredientForm';
 
+let mapStateToProps = (state) => {
+  return {
+    displayNext: state.displayNext, 
+    needAnotherRow: state.needAnotherRow,
+    creatingNewEvent: state.creatingNewEvent,
+    newEvent: state.newEvent
+  };
+}
 
-
-let CreateNewScreen = () => {
-  return (
-    <div className="Container">
-      <header>
-        < NewHeader />
-        <h1> Create New Event </h1>
-      </header>
-      < CreateNew />
-    </div>
-    )
+let CreateNewScreen = ({displayNext, needAnotherRow, creatingNewEvent, newEvent}) => {
+  if (!displayNext) {
+    return (
+      <div>
+        <header>
+          < NewHeader />
+          <h1> Create New Event </h1>
+        </header>
+        < NewEventMetadataForm />
+      </div>
+    );
   }
+  else if (!needAnotherRow) {
+    return (
+      <div>
+        <header>
+          < NewHeader />
+          <h1> Create New Event </h1>
+        </header>
+        < NewEventMenuForm />
+        <p>NewEventIngredientForm will someday render</p>{/* < NewEventIngredientForm /> */}
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <header>
+          < NewHeader />
+          <h1> Create New Event </h1>
+        </header>
+        <p>NewEventMenuForm will someday render</p>{/* < NewEventMenuForm />*/}
+        <p>NewEventShoppingList will someday render</p>{/* < NewEventShoppingList />*/}
+        <p>NewEventIngredientForm will someday render</p>{/* < NewEventIngredientForm /> */}
+      </div>
+    );
+  }
+}
 
-export default CreateNewScreen;
+
+export default connect(mapStateToProps)(CreateNewScreen);
