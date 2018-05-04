@@ -16,7 +16,13 @@ let initialState = {
 
     eventsList: [],
 
-    isLoggedIn: false
+    isLoggedIn: false,
+
+    creatingNewEvent: false,
+
+    newEvent: {},
+
+    displayNext: false
 }
 
 
@@ -33,11 +39,27 @@ let reducer = (state = initialState, action) => {
                 ...state, currentUser: action.payload, isLoggedIn: true
             }
         }
-        case 'CREATE_NEW_EVENT': {
-            return {...state, 
-                eventsList: [...state.eventsList, action.payload]
+        case 'DISPLAY_NEXT': {
+            return {...state, displayNext: true, creatingNewEvent: true
             }
         }
+
+        case 'CREATE_NEW_EVENT': {
+            return {...state, newEvent: {...state.newEvent, ...action.payload}}
+            }
+
+        case 'CREATE_NEW_SHOPPINGLIST': {
+            return {...state, newEvent: {...state.newEvent, ...action.payload}}
+            }
+
+            
+
+        case 'DONE_EDITING': {
+            return {...state, creatingNewEvent: false, displayNext: false}
+            }
+
+
+
         case "REMOVE_USER_FROM_STORE": {
             return {
                 ...state, currentUser: action.payload, isLoggedIn: false
