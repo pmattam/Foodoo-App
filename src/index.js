@@ -43,6 +43,7 @@ let reducer = (state = initialState, action) => {
             return {...state, displayNext: true, creatingNewEvent: true
             }
         }
+
         case 'CREATE_NEW_EVENT': {
             return {...state, newEvent: {...state.newEvent, ...action.payload}}
             }
@@ -58,6 +59,12 @@ let reducer = (state = initialState, action) => {
             }
 
 
+
+        case "REMOVE_USER_FROM_STORE": {
+            return {
+                ...state, currentUser: action.payload, isLoggedIn: false
+            }
+        }
         default: return state;
     }
 }

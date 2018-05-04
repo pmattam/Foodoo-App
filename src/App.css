@@ -100,6 +100,49 @@ body {
   text-align: center;
 }
 
+/* LoginScreen */
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.sl-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 40px 0 0;
+}
+
+.sl a {
+  padding: 0 40px ;
+}
+
+.sl button {
+  height: 40px;
+  width: 130px;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.form-group input{
+  height: 40px;
+  width: 290px;
+  padding: 0 0 0 15px;
+}
+
+label {
+  padding: 0 20px;
+}
+
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
