@@ -3,6 +3,7 @@ const LOAD_EVENTS_TO_STORE = "LOAD_EVENTS_TO_STORE";
 const DISPLAY_NEXT = "DISPLAY_NEXT";
 const CREATE_NEW_EVENT = 'CREATE_NEW_EVENT';
 const DONE_EDITING = 'DONE_EDITING';
+const CREATE_NEW_SHOPPINGLIST = "CREATE_NEW_SHOPPINGLIST";
 
 export let addUserToStore = (user) => ({
     type: ADD_USER_TO_STORE,
@@ -26,6 +27,13 @@ export let newEventCreator = (details) => {
     payload: details
   }
 }
+
+export let newEventShoppingCreator = (shoppinglist) => {
+    return {
+      type: CREATE_NEW_SHOPPINGLIST,
+      payload: {shoppinglist: shoppinglist}
+    }
+  }
 
 export let doneEditing = () => {
     return {

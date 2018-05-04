@@ -43,18 +43,18 @@ let reducer = (state = initialState, action) => {
             return {...state, displayNext: true, creatingNewEvent: true
             }
         }
-        // why doesn't this work?
-        // case 'CREATE_NEW_EVENT': {
-        //     return {...state, newEvent: {...state.newEvent, action.payload}}
-        //     }
-
         case 'CREATE_NEW_EVENT': {
-            let newObject = Object.assign(state.newEvent, action.payload);
-            return {...state, newEvent: newObject}
+            return {...state, newEvent: {...state.newEvent, ...action.payload}}
             }
 
+        case 'CREATE_NEW_SHOPPINGLIST': {
+            return {...state, newEvent: {...state.newEvent, ...action.payload}}
+            }
+
+            
+
         case 'DONE_EDITING': {
-            return {...state, creatingNewEvent: false, newEvent: {}, displayNext: false}
+            return {...state, creatingNewEvent: false, displayNext: false}
             }
 
 

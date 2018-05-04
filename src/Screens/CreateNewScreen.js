@@ -35,7 +35,7 @@ let CreateNewScreen = ({displayNext, needAnotherRow, creatingNewEvent, newEvent}
           <h1> Create New Event </h1>
         </header>
         < NewEventMenuForm />
-        <p>NewEventIngredientForm will someday render</p>{/* < NewEventIngredientForm /> */}
+        < NewEventIngredientForm />
       </div>
     );
   } else {

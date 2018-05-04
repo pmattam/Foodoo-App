@@ -22,7 +22,6 @@ class NewEventMetadataForm extends React.Component {
     let clickNext = () => {
       this.props.displayNext();
       this.props.newEventCreator(this.state);
-      this.props.setCreateNewMode();
     }
 
     return (
