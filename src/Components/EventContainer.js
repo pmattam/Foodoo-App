@@ -17,7 +17,7 @@ let EventContainer = ({allEvents, idOfEventBeingViewed}) => {
           meal={eventToDisplay.mealtype} 
           client={eventToDisplay.clientname}
           menu={eventToDisplay.menu}
-          shoppingList={eventToDisplay.shoppinglist}
+          shoppinglist={eventToDisplay.shoppinglist}
         />
       </div>
     )
