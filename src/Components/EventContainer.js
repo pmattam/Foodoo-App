@@ -8,7 +8,7 @@ let EventContainer = ({allEvents, idOfEventBeingViewed}) => {
     let arr = allEvents.filter(event => event.eventid === parseInt(idOfEventBeingViewed, 10));
     let eventToDisplay = arr[0]; //how can I refactor this foolishness?
     return (
-      <div className="EventContainer">
+      <div className="event-container">
         < EventTitle title={eventToDisplay.eventtitle} date={eventToDisplay.eventdate}/>
         < EventDescription description={eventToDisplay.eventdescription}/>
         < EventMetadata 

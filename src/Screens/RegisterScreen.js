@@ -46,11 +46,12 @@ let RegisterScreenWrapper = ({ props }) => {
 
     return (
     <div className="register-container">
-        <header>
+        <header className="header">
             <div><Link to="/"><img src={mainLogo} className="main-logo" alt="mainlogo" /></Link></div>
         </header>
     <div className="form">
     <form onSubmit={handleSubmit} className="login-form">
+    <div className="sform">
         <FormGroup controlId="email" bsSize="large">
             <FormControl
               placeholder="email"
@@ -83,7 +84,7 @@ let RegisterScreenWrapper = ({ props }) => {
               onChange={readLocation}
         />
         </FormGroup>
-
+        </div>
             <div className="sl">
             <Button
                 block

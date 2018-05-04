@@ -99,6 +99,62 @@ body {
   font-size: 20px;
   text-align: center;
 }
+/* One event Screen */
+.se {
+  padding: 0 50px;
+}
+
+.se-border {
+  border: solid 1px;
+}
+
+.event-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding:20px
+}
+
+
+.event-st, .event-mc {
+  display: flex;
+  justify-content: center;
+}
+
+.event-st p, .event-mc p {
+  padding: 5px 30px 5px 30px;
+  text-align: center;
+  border: solid 1px;
+  height: 35px;
+  width: 150px;
+}
+
+.EventSize, .EventType, .MealType, .ClientName {
+  padding:  0 20px;
+}
+
+.ms {
+  display: flex;
+  justify-content: center;
+}
+
+.MenuCard, .ShoppingListCard {
+  border: solid 1px;
+  padding: 5px 10px 5px 10px;
+  height: 350px;
+  width: 300px;
+}
+
+.exit-door {
+  height: 30px;
+}
+
+/* sign-in Screen */
+
+.sform {
+  padding: 0 0 50px 0;
+}
 
 /* LoginScreen */
 
@@ -109,6 +165,7 @@ body {
   align-items: center;
   padding: 30px;
 }
+
 
 .sl-form {
   display: flex;
@@ -122,6 +179,7 @@ body {
 }
 
 .sl button {
+
   height: 40px;
   width: 130px;
 }
@@ -141,6 +199,7 @@ body {
 label {
   padding: 0 20px;
 }
+
 
 
 @keyframes App-logo-spin {
