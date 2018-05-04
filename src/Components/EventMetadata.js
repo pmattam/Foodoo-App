@@ -10,12 +10,18 @@ import ShoppingListCard from '../Components/ShoppingListCard';
 let EventMetadata = ({size, type, meal, client, menu, shoppinglist}) => {
     return (
       <div className="EventMetadata">
+        <div className="event-st">
         < EventSize size={size}/>
         < EventType type={type}/>
+        </div>
+        <div className="event-mc">
         < MealType meal={meal}/>
         < ClientName client={client}/>
+        </div>
+        <div className="ms">
         < MenuCard menu={menu}/>
         < ShoppingListCard shoppinglist={shoppinglist}/>
+        </div>
       </div>
     )
   }

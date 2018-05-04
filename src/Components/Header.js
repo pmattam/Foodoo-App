@@ -8,7 +8,7 @@ import createNewIcon from '../images/create-new-icon.svg';
 let Header = () => {
     return (
     <div className="header"> 
-        <div><Link to="/"><img src={mainLogo} className="main-logo" alt="mainlogo" /></Link></div>
+        <div><Link to="/events"><img src={mainLogo} className="main-logo" alt="mainlogo" /></Link></div>
         <div className="space"></div>
         <div><Link to="/new"><img src={createNewIcon} className="create-New-Icon" alt="newIcon" /></Link></div>
         <div><img src={filterIcon} className="filter-Icon" alt="newIcon" /></div>

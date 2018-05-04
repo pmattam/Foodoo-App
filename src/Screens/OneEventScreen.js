@@ -21,8 +21,12 @@ let OneEventScreen = ({allEvents, idOfEventBeingViewed}) => {
       <header>
         <Header />
       </header>
+        <div className="se">
+        <div className="se-border">
         < EventContainer allEvents={allEvents} idOfEventBeingViewed={idOfEventBeingViewed}/>
         < NavBack />
+        </div>
+        </div>
       </div>
     )
 }

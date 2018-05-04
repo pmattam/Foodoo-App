@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 let NewHeader = () => {
     return (
     <div className="new-header"> 
-        <div><Link to="/"><img src={mainLogo} className="main-logo" alt="mainlogo" /></Link></div>
+        <div><Link to="/events"><img src={mainLogo} className="main-logo" alt="mainlogo" /></Link></div>
         <div className="space"></div>
         <div><Link to="/logout">Log out</Link></div>
     </div>
