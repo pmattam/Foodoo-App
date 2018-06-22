@@ -17,9 +17,5 @@
         "build": "react-scripts build",
         "test": "react-scripts test --env=jsdom",
         "eject": "react-scripts eject"
-    },
-    "main": "index.js",
-    "repository": "https://github.com/pmattam/Foodoo-App.git",
-    "author": "Prathyusha Mattam <prathyusha.mattam@gmail.com>",
-    "license": "MIT"
+    }
 }
