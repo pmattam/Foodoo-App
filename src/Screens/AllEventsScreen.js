@@ -51,7 +51,7 @@ class AllEventsScreen extends Component {
                    <Link to={`/events/${event.eventid}`}>
                    <div className="title-date">
                       <p>{event.eventtitle}</p>
-                      <p>{event.eventdate}</p>
+                      <p>{event.eventdate.slice(0, 10)}</p>
                   </div>
                   </Link>
                     <div className="each-event-details">

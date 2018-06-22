@@ -8,9 +8,9 @@ let ShoppingListCard = ({shoppinglist}) => {
         <h4>SHOPPING LIST</h4>
         <ul>
           {
-            shoppinglist.map(item => {
+            shoppinglist.map((item, i) => {
               return (
-                <li><span>{item.quantity} </span><span>{item.unit} of </span><span>{item.ingredient}</span></li>
+                <li key={i}><span>{item.quantity} </span><span>{item.unit} of </span><span>{item.ingredient}</span></li>
               );
             })
           }
