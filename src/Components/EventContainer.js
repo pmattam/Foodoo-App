@@ -5,11 +5,11 @@ import EventDescription from './EventDescription';
 import EventMetadata from './EventMetadata';
 
 let EventContainer = ({allEvents, idOfEventBeingViewed}) => {
-    let arr = allEvents.filter(event => event.eventid === parseInt(idOfEventBeingViewed, 10));
-    let eventToDisplay = arr[0]; //how can I refactor this foolishness?
+    let eventToDisplay = allEvents.filter(event => event.eventid === parseInt(idOfEventBeingViewed, 10))[0];
+    
     return (
       <div className="event-container">
-        < EventTitle title={eventToDisplay.eventtitle} date={eventToDisplay.eventdate}/>
+        < EventTitle title={eventToDisplay.eventtitle} date={eventToDisplay.eventdate.slice(0, 10)}/>
         < EventDescription description={eventToDisplay.eventdescription}/>
         < EventMetadata 
           size={eventToDisplay.eventsize} 
